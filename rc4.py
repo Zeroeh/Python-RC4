@@ -15,10 +15,7 @@ def setKey(key):
 	state = [n for n in range(256)]
 	p = q = j = 0
 	for i in range(256):
-		if len(key) > 0:
-			j = (j + state[i] + key[i % len(key)]) % 256
-		else:
-			j = (j + state[i]) % 256
+		j = (j + state[i] + key[i % len(key)]) % 256
 		state[i], state[j] = state[j], state[i]
 
 ''' RC4 Pseudo-Random Generation Algorithm (PRGA) '''
